@@ -134,7 +134,6 @@
         }
     </style>
 </head>
-
 <body>
     <section class="contacto">
         <div class="titulo">
@@ -156,7 +155,7 @@
                 <div class="dato">
                     <strong>📱 WhatsApp</strong>
                     <a href="https://wa.me/573001234567" target="_blank">
-                        +57 300 123 4567
+                        +57 323 224 65 90
                     </a>
                 </div>
               <div class="dato">
@@ -173,7 +172,6 @@
                     <strong>🌐 Síguenos</strong>
                     <div class="redes">
                         <a href="#" target="_blank">Instagram</a>
-                        <a href="#" target="_blank">Facebook</a>
                         <a href="#" target="_blank">TikTok</a>
                     </div>
                 </div>
@@ -203,7 +201,7 @@
                         type="tel"
                         id="telefono"
                         name="telefono"
-                        placeholder="+57 300 000 0000"
+                        placeholder="+57 323 224 65 90"
                     >
                     <label for="mensaje">Mensaje</label>
                     <textarea
