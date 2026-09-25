@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban Style | Catálogo de Gorras</title>
+    <title>Modern Style | Catálogo de Gorras</title>
     <style>
         :root {
             --gris: #2E2D2D;
@@ -264,7 +264,7 @@
     <!-- NAVEGACIÓN -->
     <nav>
         <a href="index.html">Inicio</a>
-        <a href="#catalogo">Catálogo</a>
+        <a href="catalogo.HTML 2">Catálogo</a>
         <a href="contacto.HTML">Contacto</a>
     </nav>
     <main class="container">
@@ -379,7 +379,7 @@
                     <div class="card-img-container">
                         <span class="badge">Premium</span>
                         <img
-                            src="https://images.unsplash.com/photo-1596460652294-f04f0b69bc44?q=80&w=500"
+                            src="https:https://tse3.mm.bing.net/th/id/OIP.2dhooq2fOT9VdAeYumnTiwHaHa?r=0&pid=Api&h=220&P=0"
                             alt="Gorra Premium"
                             loading="lazy"
                         >
