@@ -258,7 +258,7 @@
 <body>
     <!-- ENCABEZADO -->
     <header id="inicio">
-        <h1>Urban Style</h1>
+        <h1>mosern atyle!</h1>
         <p>Premium Custom Headwear | Calidad y Estilo Único</p>
     </header>
     <!-- NAVEGACIÓN -->
@@ -281,12 +281,12 @@
                         <span class="badge">Top Ventas</span>
                         <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjfW29Xt4XzH3UcqZDlCxOkLPn3Wrp4WNuJ1FNW-pYmg&s"
-                            alt="Gorra Snapback Classic"
+                            alt=solo tono"
                             loading="lazy"
                         >
                     </div>
                     <div class="card-info">
-                        <h3>Snapback Classic</h3>
+                        <h3>solo tono</h3>
                         <p>
                             Base rígida de 6 paneles con visera plana.
                             Ideal para bordados 3D.
@@ -301,15 +301,14 @@
                     <div class="card-img-container">
                         <img
                             src="https://assets.adidas.com/images/w_500,f_auto,q_auto/75db818e2ae84654a98097cfcf8e7364_9366/Gorra_de_Running_Climacool_5_Paneles_Negro_KG6012_00_plp_standard.jpg"
-                            alt="Gorra Trucker Mesh"
+                            alt=o"dos paneles"
                             loading="lazy"
                         >
                     </div>
                     <div class="card-info">
-                        <h3>Trucker Mesh</h3>
+                        <h3>dos paneles</h3>
                         <p>
-                            Malla premium transpirable. Perfecta para
-                            estilos veraniegos y parches.
+                           dos tonos con visera de un solo color 
                         </p>
                         <a href="#contacto" class="btn-catalog">
                             Cotizar Diseño
@@ -322,15 +321,14 @@
                         <span class="badge">Nuevo</span>
                         <img
                             src="https://assets.adidas.com/images/w_500,f_auto,q_auto/0337df400ed44d21adcf0e621fbe9c8d_faec/GORRA_DEFENDER_5PNL_Blanco_KH0377_db01_00_standard.jpg"
-                            alt="Vintage Dad Hat"
+                            alt="rayas de tigre"
                             loading="lazy"
                         >
                     </div>
                     <div class="card-info">
-                        <h3>Vintage Dad Hat</h3>
+                        <h3>rayas de tigre</h3>
                         <p>
-                            Algodón lavado desestructurado para un look
-                            relajado y urbano.
+                           gorra sencillas con un lateral de tre rayas de distinto color 
                         </p>
                         <a href="#contacto" class="btn-catalog">
                             Cotizar Diseño
@@ -349,8 +347,7 @@
                     <div class="card-info">
                         <h3>Urban Beanie</h3>
                         <p>
-                            Tejido de punto suave. Mantiene el estilo
-                            incluso en climas fríos.
+                            gorra de evolucion de rayas de tigre con distintos colores 
                         </p>
                         <a href="#contacto" class="btn-catalog">
                             Cotizar Diseño
@@ -362,15 +359,14 @@
                     <div class="card-img-container">
                         <img
                             src="https://assets.adidas.com/images/w_500,f_auto,q_auto/a72f90b93db0416c95dca755077cb9f6_9366/Gorra_CLIMACOOL_3_Paneles_Morado_KD1781_00_plp_standard.jpg"
-                            alt="Military Camo"
+                            alt="dama urbana"
                             loading="lazy"
                         >
                     </div>
                     <div class="card-info">
-                        <h3>Military Camo</h3>
+                        <h3>dama urbana</h3>
                         <p>
-                            Estampado de camuflaje resistente con cierre
-                            de hebilla metálica.
+                            gorra con tejidos y nuevos estampados 
                         </p>
                         <a href="#contacto" class="btn-catalog">
                             Cotizar Diseño
@@ -384,15 +380,14 @@
                         <span class="badge">Premium</span>
                         <img
                             src="https://images.unsplash.com/photo-1596460652294-f04f0b69bc44?q=80&w=500"
-                            alt="Gorra Sport Performance"
+                            alt="Gorra Premium"
                             loading="lazy"
                         >
                     </div>
                     <div class="card-info">
-                        <h3>Sport Performance</h3>
+                        <h3>gorra premium</h3>
                         <p>
-                            Tela dry-fit ultraligera para deportistas
-                            de alto rendimiento.
+                          con diseños perzonalizados 
                         </p>
                         <a href="#contacto" class="btn-catalog">
                             Cotizar Diseño
@@ -437,22 +432,22 @@
                     <label for="modelo">Modelo de Interés</label>
                  <select id="modelo" name="modelo">
                         <option value="Snapback Classic">
-                            Snapback Classic
+                            solo tono
                         </option>
                         <option value="Trucker Mesh">
-                            Trucker Mesh
+                            dos paneles 
                         </option>
                         <option value="Vintage Dad Hat">
-                            Vintage Dad Hat
+                            rayas de tigre
                         </option>
                         <option value="Urban Beanie">
                             Urban Beanie
                         </option>
                         <option value="Military Camo">
-                            Military Camo
+                           dama urbana
                         </option>
                         <option value="Sport Performance">
-                            Sport Performance
+                            gorra premium 
                         </option>
                     </select>
                 </div>
