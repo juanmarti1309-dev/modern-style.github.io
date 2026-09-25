@@ -10,9 +10,14 @@
             --rojo: #D22B2B;
             --blanco: #ffffff;
             --gris-claro: #f4f4f4;
-            --oro: #D4AF37; /* Para combinar con tu fondo de mármol */
+            --oro: #D4AF37;
         }
-
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: "Segoe UI", Arial, sans-serif;
             margin: 0;
@@ -20,63 +25,65 @@
             color: #333;
             background-color: var(--blanco);
         }
-
-        /* --- ENCABEZADO --- */
+        /* ENCABEZADO */
         header {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                              url('https://img.freepik.com/vector-gratis/elegante-fondo-efecto-marmol-negro-dorado-brillo-dorado_1048-18886.jpg?semt=ais_hybrid&w=740&q=80'); 
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url("https://img.freepik.com/vector-gratis/elegante-fondo-efecto-marmol-negro-dorado-brillo-dorado_1048-18886.jpg?semt=ais_hybrid&w=740&q=80");
+
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
-            padding: 6rem 1.5rem; 
+            padding: 6rem 1.5rem;
             text-align: center;
             border-bottom: 6px solid var(--rojo);
         }
-
         header h1 {
             font-size: 3.5rem;
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 5px;
-            text-shadow: 2px 4px 10px rgba(0,0,0,0.8);
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
         }
-
-        /* --- NAVEGACIÓN --- */
+        header p {
+            font-size: 1.2rem;
+            margin-top: 15px;
+        }
+        /* NAVEGACIÓN */
         nav {
             background-color: var(--gris-claro);
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
             padding: 1rem;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-
         nav a {
             text-decoration: none;
             color: var(--gris);
             font-weight: bold;
-            margin: 0 20px;
             text-transform: uppercase;
             transition: 0.3s;
         }
-
-        nav a:hover { color: var(--rojo); }
-
-        /* --- SECCIÓN CATÁLOGO --- */
+        nav a:hover {
+            color: var(--rojo);
+        }
+        /* CONTENEDOR */
         .container {
             max-width: 1200px;
             margin: 3rem auto;
             padding: 0 20px;
         }
-
+        /* TÍTULOS */
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
         }
-
         .section-title h2 {
             font-size: 2.5rem;
             color: var(--gris);
@@ -84,49 +91,43 @@
             display: inline-block;
             padding-bottom: 10px;
         }
-
-        /* --- GRILLA DEL CATÁLOGO --- */
+        /* GALERÍA */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
-
-        /* --- TARJETA DE PRODUCTO --- */
+        /* TARJETAS */
         .card {
             background: #fff;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
             border: 1px solid #eee;
         }
-
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
         }
-
         .card-img-container {
             position: relative;
             overflow: hidden;
             background-color: #f9f9f9;
         }
-
         .card img {
+            display: block;
             width: 100%;
             height: 300px;
-            object-fit: contain; /* Para que la gorra se vea completa */
+            object-fit: contain;
             padding: 20px;
             transition: transform 0.5s ease;
         }
-
-        .card:hover img {
-            transform: scale(1.1);
+       .card:hover img {
+            transform: scale(1.08);
         }
-
         .badge {
             position: absolute;
             top: 15px;
@@ -138,28 +139,28 @@
             font-weight: bold;
             border-radius: 20px;
             text-transform: uppercase;
+            z-index: 2;
         }
-
         .card-info {
             padding: 20px;
             text-align: center;
             flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
-
         .card-info h3 {
             margin: 0 0 10px;
             font-size: 1.4rem;
             color: var(--gris);
         }
-
         .card-info p {
             font-size: 0.9rem;
             color: #777;
             margin-bottom: 20px;
+            flex-grow: 1;
         }
-
         .btn-catalog {
-            display: inline-block;
+            display: block;
             background-color: var(--gris);
             color: white;
             text-decoration: none;
@@ -167,16 +168,13 @@
             border-radius: 5px;
             font-weight: bold;
             transition: 0.3s;
-            border: none;
-            cursor: pointer;
             width: 100%;
         }
 
         .btn-catalog:hover {
             background-color: var(--rojo);
         }
-
-        /* --- FORMULARIO --- */
+        /* FORMULARIO */
         .contact-form {
             background: var(--gris-claro);
             padding: 40px;
@@ -185,10 +183,28 @@
             border-left: 8px solid var(--rojo);
         }
 
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-weight: bold; margin-bottom: 8px; }
-        input, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; }
-        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+        }
         .btn-submit {
             background-color: var(--rojo);
             color: white;
@@ -201,9 +217,10 @@
             cursor: pointer;
             transition: 0.3s;
         }
-
-        .btn-submit:hover { background-color: var(--gris); }
-
+        .btn-submit:hover {
+            background-color: var(--gris);
+        }
+        /* FOOTER */
         footer {
             background-color: var(--gris);
             color: white;
@@ -211,141 +228,264 @@
             padding: 3rem 1.5rem;
             margin-top: 5rem;
         }
+        /* MÓVILES */
+        @media (max-width: 600px) {
+            header {
+                padding: 4rem 1rem;
+            }
+            header h1 {
+                font-size: 2.3rem;
+                letter-spacing: 3px;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            nav {
+                gap: 10px;
+            }
+            nav a {
+                font-size: 0.85rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .contact-form {
+                padding: 25px 20px;
+            }
+        }
     </style>
 </head>
 <body>
-
+    <!-- ENCABEZADO -->
     <header id="inicio">
         <h1>Urban Style</h1>
         <p>Premium Custom Headwear | Calidad y Estilo Único</p>
     </header>
-
+    <!-- NAVEGACIÓN -->
     <nav>
-        <a href="index.html">Inicio</a>
+        <a href="#inicio">Inicio</a>
         <a href="#catalogo">Catálogo</a>
-        <a href="contacto.HTML">Contacto</a>
+        <a href="#contacto">Contacto</a>
     </nav>
-
-    <div class="container">
-        
+    <main class="container">
+        <!-- CATÁLOGO -->
         <section id="catalogo">
             <div class="section-title">
-                <h2>Catálogo </h2>
+                <h2>Catálogo</h2>
                 <p>Explora nuestras bases listas para personalizar</p>
             </div>
-
             <div class="gallery">
+                <!-- PRODUCTO 1 -->
                 <div class="card">
                     <div class="card-img-container">
                         <span class="badge">Top Ventas</span>
-                        <img src="C:https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjfW29Xt4XzH3UcqZDlCxOkLPn3Wrp4WNuJ1FNW-pYmg&s" alt="Gorra Snapback">
+                        <img
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjfW29Xt4XzH3UcqZDlCxOkLPn3Wrp4WNuJ1FNW-pYmg&s"
+                            alt="Gorra Snapback Classic"
+                            loading="lazy"
+                        >
                     </div>
                     <div class="card-info">
                         <h3>Snapback Classic</h3>
-                        <p>Base rígida de 6 paneles con visera plana. Ideal para bordados 3D.</p>
-                        <a href="#contacto" class="btn-catalog">Cotizar Diseño</a>
+                        <p>
+                            Base rígida de 6 paneles con visera plana.
+                            Ideal para bordados 3D.
+                        </p>
+                        <a href="#contacto" class="btn-catalog">
+                            Cotizar Diseño
+                        </a>
                     </div>
                 </div>
-
+                <!-- PRODUCTO 2 -->
                 <div class="card">
                     <div class="card-img-container">
-                        <img src="C:https://assets.adidas.com/images/w_500,f_auto,q_auto/75db818e2ae84654a98097cfcf8e7364_9366/Gorra_de_Running_Climacool_5_Paneles_Negro_KG6012_00_plp_standard.jpg" alt="Gorra Trucker">
+                        <img
+                            src="https://assets.adidas.com/images/w_500,f_auto,q_auto/75db818e2ae84654a98097cfcf8e7364_9366/Gorra_de_Running_Climacool_5_Paneles_Negro_KG6012_00_plp_standard.jpg"
+                            alt="Gorra Trucker Mesh"
+                            loading="lazy"
+                        >
                     </div>
                     <div class="card-info">
                         <h3>Trucker Mesh</h3>
-                        <p>Malla premium transpirable. Perfecta para estilos veraniegos y parches.</p>
-                        <a href="#contacto" class="btn-catalog">Cotizar Diseño</a>
+                        <p>
+                            Malla premium transpirable. Perfecta para
+                            estilos veraniegos y parches.
+                        </p>
+                        <a href="#contacto" class="btn-catalog">
+                            Cotizar Diseño
+                        </a>
                     </div>
                 </div>
-
+                <!-- PRODUCTO 3 -->
                 <div class="card">
                     <div class="card-img-container">
                         <span class="badge">Nuevo</span>
-                        <img src="C:https://assets.adidas.com/images/w_500,f_auto,q_auto/0337df400ed44d21adcf0e621fbe9c8d_faec/GORRA_DEFENDER_5PNL_Blanco_KH0377_db01_00_standard.jpg" alt="Dad Hat">
+                        <img
+                            src="https://assets.adidas.com/images/w_500,f_auto,q_auto/0337df400ed44d21adcf0e621fbe9c8d_faec/GORRA_DEFENDER_5PNL_Blanco_KH0377_db01_00_standard.jpg"
+                            alt="Vintage Dad Hat"
+                            loading="lazy"
+                        >
                     </div>
                     <div class="card-info">
                         <h3>Vintage Dad Hat</h3>
-                        <p>Algodón lavado desestructurado para un look relajado y urbano.</p>
-                        <a href="#contacto" class="btn-catalog">Cotizar Diseño</a>
+                        <p>
+                            Algodón lavado desestructurado para un look
+                            relajado y urbano.
+                        </p>
+                        <a href="#contacto" class="btn-catalog">
+                            Cotizar Diseño
+                        </a>
                     </div>
                 </div>
-
+                <!-- PRODUCTO 4 -->
                 <div class="card">
                     <div class="card-img-container">
-                        <img src="C:https://assets.adidas.com/images/c_fill,g_auto,w_1200,h_630,f_auto,q_auto/w_500,f_auto,q_auto/c6de9eac868d4ffbba2bad5e48129e08_9366/Gorra_CLIMACOOL_3_Paneles_Negro_JG5859_01_00_standard.jpg" alt="Beanie">
+                        <img
+                            src="https://assets.adidas.com/images/c_fill,g_auto,w_1200,h_630,f_auto,q_auto/w_500,f_auto,q_auto/c6de9eac868d4ffbba2bad5e48129e08_9366/Gorra_CLIMACOOL_3_Paneles_Negro_JG5859_01_00_standard.jpg"
+                            alt="Urban Beanie"
+                            loading="lazy"
+                        >
                     </div>
                     <div class="card-info">
                         <h3>Urban Beanie</h3>
-                        <p>Tejido de punto suave. Mantiene el estilo incluso en climas fríos.</p>
-                        <a href="#contacto" class="btn-catalog">Cotizar Diseño</a>
+                        <p>
+                            Tejido de punto suave. Mantiene el estilo
+                            incluso en climas fríos.
+                        </p>
+                        <a href="#contacto" class="btn-catalog">
+                            Cotizar Diseño
+                        </a>
                     </div>
                 </div>
-
+                <!-- PRODUCTO 5 -->
                 <div class="card">
                     <div class="card-img-container">
-                        <img src="C:https://assets.adidas.com/images/w_500,f_auto,q_auto/a72f90b93db0416c95dca755077cb9f6_9366/Gorra_CLIMACOOL_3_Paneles_Morado_KD1781_00_plp_standard.jpg" alt="Camo Cap">
+                        <img
+                            src="https://assets.adidas.com/images/w_500,f_auto,q_auto/a72f90b93db0416c95dca755077cb9f6_9366/Gorra_CLIMACOOL_3_Paneles_Morado_KD1781_00_plp_standard.jpg"
+                            alt="Military Camo"
+                            loading="lazy"
+                        >
                     </div>
                     <div class="card-info">
                         <h3>Military Camo</h3>
-                        <p>Estampado de camuflaje resistente con cierre de hebilla metálica.</p>
-                        <a href="#contacto" class="btn-catalog">Cotizar Diseño</a>
+                        <p>
+                            Estampado de camuflaje resistente con cierre
+                            de hebilla metálica.
+                        </p>
+                        <a href="#contacto" class="btn-catalog">
+                            Cotizar Diseño
+                        </a>
                     </div>
                 </div>
 
+                <!-- PRODUCTO 6 -->
                 <div class="card">
                     <div class="card-img-container">
                         <span class="badge">Premium</span>
-                        <img src="https://images.unsplash.com/photo-1596460652294-f04f0b69bc44?q=80&w=500" alt="Gorra Sport">
+                        <img
+                            src="https://images.unsplash.com/photo-1596460652294-f04f0b69bc44?q=80&w=500"
+                            alt="Gorra Sport Performance"
+                            loading="lazy"
+                        >
                     </div>
                     <div class="card-info">
                         <h3>Sport Performance</h3>
-                        <p>Tela dry-fit ultraligera para deportistas de alto rendimiento.</p>
-                        <a href="#contacto" class="btn-catalog">Cotizar Diseño</a>
+                        <p>
+                            Tela dry-fit ultraligera para deportistas
+                            de alto rendimiento.
+                        </p>
+                        <a href="#contacto" class="btn-catalog">
+                            Cotizar Diseño
+                        </a>
                     </div>
                 </div>
+
             </div>
         </section>
-
+        <!-- CONTACTO -->
         <section id="contacto" class="contact-form">
-            <div class="section-title">
+         <div class="section-title">
                 <h2>¿Tienes una idea?</h2>
-                <p>Envíanos los detalles y crearemos tu gorra personalizada</p>
+                <p>
+                    Envíanos los detalles y crearemos tu gorra personalizada
+                </p>
             </div>
-            
-            <form action="#">
+
+            <form action="#" method="post">
                 <div class="form-group">
-                    <label>Nombre Completo</label>
-                    <input type="text" placeholder="Ej: Juan Pérez" required>
+                    <label for="nombre">Nombre Completo</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        name="nombre"
+                        placeholder="Ej: Juan Pérez"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico</label>
+                    <input
+                        type="email"
+                        id="correo"
+                        name="correo"
+                        placeholder="tu@email.com"
+                        required
+                    >
                 </div>
                 <div class="form-group">
-                    <label>Correo Electrónico</label>
-                    <input type="email" placeholder="tu@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Modelo de Interés</label>
-                    <select style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc;">
-                        <option>Snapback Classic</option>
-                        <option>Trucker Mesh</option>
-                        <option>Vintage Dad Hat</option>
-                        <option>Urban Beanie</option>
-                        <option>Military Camo</option>
-                        <option>Sport Performance</option>
+                    <label for="modelo">Modelo de Interés</label>
+                 <select id="modelo" name="modelo">
+                        <option value="Snapback Classic">
+                            Snapback Classic
+                        </option>
+                        <option value="Trucker Mesh">
+                            Trucker Mesh
+                        </option>
+                        <option value="Vintage Dad Hat">
+                            Vintage Dad Hat
+                        </option>
+                        <option value="Urban Beanie">
+                            Urban Beanie
+                        </option>
+                        <option value="Military Camo">
+                            Military Camo
+                        </option>
+                        <option value="Sport Performance">
+                            Sport Performance
+                        </option>
                     </select>
                 </div>
+
                 <div class="form-group">
-                    <label>Descripción del Diseño</label>
-                    <textarea rows="4" placeholder="Describe parches, colores o logos..."></textarea>
+                    <label for="descripcion">
+                        Descripción del Diseño
+                    </label>
+                    <textarea
+                        id="descripcion"
+                        name="descripcion"
+                        rows="4"
+                        placeholder="Describe parches, colores o logos..."
+                    ></textarea>
                 </div>
-                <button type="submit" class="btn-submit">Enviar Solicitud de Cotización</button>
+                <button type="submit" class="btn-submit">
+                    Enviar Solicitud de Cotización
+                </button>
             </form>
         </section>
-
-    </div>
-
+    </main>
+    <!-- PIE DE PÁGINA -->
     <footer>
-        <p>&copy; 2026 Urban Style | colombia bogota bosa telefono 3232246590 </p>
-        <p><small>Envíos a todo el país | Garantía de Calidad</small></p>
+        <p>
+            &copy; 2026 Urban Style |
+            Bogotá, Colombia | Bosa |
+            Tel: 323 224 6590
+        </p>
+        <p>
+            <small>
+                Envíos a todo el país | Garantía de Calidad
+            </small>
+        </p>
     </footer>
-
 </body>
 </html>
