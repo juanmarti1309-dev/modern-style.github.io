@@ -1,10 +1,11 @@
-
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JUANCEL | Tienda de Celulares</title>
+    <meta name="description" content="JUANCEL, tu tienda de iPhone en Colombia.">
 
     <style>
         * {
@@ -22,11 +23,12 @@
 
         header {
             background: #111;
-            padding: 22px 8%;
+            padding: 20px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 15px;
             border-bottom: 3px solid #e50914;
         }
 
@@ -34,16 +36,24 @@
             font-size: 32px;
             font-weight: bold;
             color: white;
+            text-decoration: none;
         }
 
-        .logo span {
+        .logo span,
+        .hero h1 span,
+        .section-title span {
             color: #e50914;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 10px;
             font-weight: bold;
         }
 
@@ -52,119 +62,139 @@
         }
 
         .hero {
-            min-height: 480px;
+            min-height: 440px;
             padding: 80px 20px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #000, #300000, #111);
+            background: linear-gradient(
+                135deg, #000, #350609, #111
+            );
         }
 
         .hero h1 {
-            font-size: clamp(42px, 8vw, 75px);
+            font-size: clamp(45px, 8vw, 75px);
             margin-bottom: 20px;
         }
 
-        .hero h1 span {
-            color: #e50914;
-        }
-
         .hero p {
-            font-size: 19px;
-            margin-bottom: 30px;
-            color: #eee;
+            font-size: 18px;
+            color: #ddd;
+            margin-bottom: 20px;
         }
 
-        .boton {
+        .button {
             display: inline-block;
             background: #e50914;
             color: white;
-            padding: 14px 28px;
+            padding: 13px 24px;
             border-radius: 7px;
             text-decoration: none;
             font-weight: bold;
+            border: 1px solid #e50914;
             transition: 0.3s;
         }
 
-        .boton:hover {
+        .button:hover {
             background: white;
             color: #e50914;
-            transform: scale(1.05);
+            transform: translateY(-3px);
         }
 
-        .catalogo {
-            padding: 65px 7%;
+        section {
+            padding: 60px 7%;
+        }
+
+        .section-title {
             text-align: center;
+            font-size: 35px;
+            margin-bottom: 20px;
         }
 
-        .catalogo h2, .contacto h2 {
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-
-        .catalogo h2 span, .contacto h2 span {
-            color: #e50914;
-        }
-
-        .descripcion {
+        .description {
             color: #bbb;
-            margin-bottom: 40px;
+            text-align: center;
+            margin: 0 auto 35px;
+            max-width: 700px;
         }
 
-        .productos {
+        .features,
+        .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
         }
 
-        .producto {
+        .feature {
             background: #171717;
             border: 1px solid #333;
             border-radius: 12px;
-            padding: 20px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .feature h3 {
+            margin-bottom: 12px;
+        }
+
+        .feature p {
+            color: #ccc;
+        }
+
+        .product {
+            background: #171717;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
             transition: 0.3s;
         }
 
-        .producto:hover {
+        .product:hover {
             border-color: #e50914;
-            transform: translateY(-7px);
+            transform: translateY(-5px);
         }
 
-        .producto img {
+        .product img {
             width: 100%;
-            height: 220px;
+            height: 240px;
             object-fit: contain;
-            margin-bottom: 15px;
+            background: #f5f5f5;
+            padding: 15px;
         }
 
-        .producto h3 {
+        .product-info {
+            padding: 20px;
+        }
+
+        .product h3 {
             font-size: 22px;
             margin-bottom: 10px;
         }
 
-        .producto p {
+        .product p {
             color: #ccc;
             font-size: 14px;
             margin-bottom: 18px;
         }
 
-        .contacto {
-            padding: 65px 20px;
+        .catalog-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact {
             background: #141414;
             text-align: center;
             border-top: 2px solid #e50914;
         }
 
-        .contacto p {
+        .contact p {
             color: #ddd;
-            margin: 18px 0;
-            font-size: 18px;
-        }
-
-        .bandera {
-            color: #f5d000;
+            margin: 15px 0;
+            font-size: 17px;
         }
 
         footer {
@@ -177,117 +207,207 @@
         footer strong {
             color: #e50914;
         }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 18px 5%;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            section {
+                padding: 45px 5%;
+            }
+        }
     </style>
 </head>
 
 <body>
 
     <header>
-        <div class="logo">JUAN<span>CEL</span></div>
+        <a href="index.html" class="logo">
+            JUAN<span>CEL</span>
+        </a>
 
         <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#catalogo">Catálogo</a>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
             <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
-    <section class="hero" id="inicio">
-        <h1>JUAN<span>CEL</span></h1>
-        <p>Tu próximo iPhone está aquí.</p>
-        <p>📱 Vendemos celulares en Colombia 🇨🇴</p>
-        <a href="#catalogo" class="boton">VER CATÁLOGO</a>
-    </section>
+    <main>
+        <section class="hero" id="inicio">
+            <h1>JUAN<span>CEL</span></h1>
 
-    <section class="catalogo" id="catalogo">
-        <h2>NUESTRO <span>CATÁLOGO</span></h2>
-        <p class="descripcion">
-            Conoce nuestra selección de iPhone.
-            ¡Escríbenos para consultar precios y disponibilidad!
-        </p>
+            <p>Tu próximo iPhone está aquí.</p>
 
-        <div class="productos">
+            <p>📱 Celulares en Colombia 🇨🇴</p>
 
-            <div class="producto">
-                <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=500&q=80"
-                     alt="iPhone 12">
-                <h3>iPhone 12</h3>
-                <p>Diseño elegante y gran rendimiento.</p>
-                <a class="boton" href="https://wa.me/573132213613?text=Hola%20JUANCEL,%20quiero%20informacion%20del%20iPhone%2012">Consultar</a>
+            <a href="catalogo.html" class="button">
+                EXPLORAR CATÁLOGO
+            </a>
+        </section>
+
+        <section>
+            <h2 class="section-title">
+                ¿Por qué elegir <span>JUANCEL?</span>
+            </h2>
+
+            <p class="description">
+                Encuentra tu próximo iPhone y consulta
+                nuestros modelos, colores y disponibilidad.
+            </p>
+
+            <div class="features">
+                <div class="feature">
+                    <h3>📱 Modelos iPhone</h3>
+                    <p>
+                        Consulta las diferentes generaciones
+                        disponibles.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>💬 Atención personalizada</h3>
+                    <p>
+                        Resolvemos tus dudas por WhatsApp.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <h3>🇨🇴 Estamos en Colombia</h3>
+                    <p>
+                        Atención en Bosa Carbonell y Venecia,
+                        Bogotá.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">
+                Modelos <span>destacados</span>
+            </h2>
+
+            <p class="description">
+                Estos son algunos de los modelos de nuestro
+                catálogo. Consulta precios y existencias.
+            </p>
+
+            <div class="products">
+
+                <div class="product">
+                    <img
+                        src="https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP830/iphone12.png"
+                        alt="iPhone 12"
+                        loading="lazy"
+                    >
+
+                    <div class="product-info">
+                        <h3>iPhone 12</h3>
+                        <p>
+                            Diseño moderno, pantalla OLED
+                            y cámara dual.
+                        </p>
+
+                        <a class="button"
+                           href="https://wa.me/573132213613?text=Hola%20JUANCEL%2C%20quiero%20informacion%20del%20iPhone%2012"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Consultar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img
+                        src="https://support.apple.com/library/APPLE/APPLECARE_ALLGEOS/SP851/iphone13.png"
+                        alt="iPhone 13"
+                        loading="lazy"
+                    >
+
+                    <div class="product-info">
+                        <h3>iPhone 13</h3>
+                        <p>
+                            Gran rendimiento y cámara dual
+                            con disposición diagonal.
+                        </p>
+
+                        <a class="button"
+                           href="https://wa.me/573132213613?text=Hola%20JUANCEL%2C%20quiero%20informacion%20del%20iPhone%2013"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Consultar
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <img
+                        src="https://www.apple.com/v/iphone-15/a/images/overview/hero/hero_iphone15__fano2ijy2kmm_large.jpg"
+                        alt="iPhone 15"
+                        loading="lazy"
+                    >
+
+                    <div class="product-info">
+                        <h3>iPhone 15</h3>
+                        <p>
+                            Dynamic Island, USB-C
+                            y cámara principal de 48 MP.
+                        </p>
+
+                        <a class="button"
+                           href="https://wa.me/573132213613?text=Hola%20JUANCEL%2C%20quiero%20informacion%20del%20iPhone%2015"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Consultar
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="producto">
-                <img src="https://images.unsplash.com/photo-1603891128711-11b4b03bb138?auto=format&fit=crop&w=500&q=80"
-                     alt="iPhone 13">
-                <h3>iPhone 13</h3>
-                <p>Cámara increíble y potencia para tu día.</p>
-                <a class="boton" href="https://wa.me/573132213613?text=Hola%20JUANCEL,%20quiero%20informacion%20del%20iPhone%2013">Consultar</a>
+            <div class="catalog-link">
+                <a href="catalogo.html" class="button">
+                    VER CATÁLOGO COMPLETO
+                </a>
             </div>
+        </section>
 
-            <div class="producto">
-                <img src="https://images.unsplash.com/photo-1592286927505-1def25115558?auto=format&fit=crop&w=500&q=80"
-                     alt="iPhone 14">
-                <h3>iPhone 14</h3>
-                <p>Estilo moderno y excelentes fotografías.</p>
-                <a class="boton" href="https://wa.me/573132213613?text=Hola%20JUANCEL,%20quiero%20informacion%20del%20iPhone%2014">Consultar</a>
-            </div>
+        <section class="contact" id="contacto">
+            <h2 class="section-title">
+                CONTÁC<span>TANOS</span>
+            </h2>
 
-            <div class="producto">
-                <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=500&q=80"
-                     alt="iPhone 15">
-                <h3>iPhone 15</h3>
-                <p>Diseño premium y tecnología avanzada.</p>
-                <a class="boton" href="https://wa.me/573132213613?text=Hola%20JUANCEL,%20quiero%20informacion%20del%20iPhone%2015">Consultar</a>
-            </div>
+            <p>
+                🇨🇴 Somos JUANCEL, tu tienda de celulares.
+            </p>
 
-            <div class="producto">
-                <img src="https://images.unsplash.com/photo-1726581790022-4d0d18e99c66?auto=format&fit=crop&w=500&q=80"
-                     alt="iPhone 16">
-                <h3>iPhone 16</h3>
-                <p>Potencia, diseño y nuevas funciones.</p>
-                <a class="boton" href="https://wa.me/573132213613?text=Hola%20JUANCEL,%20quiero%20informacion%20del%20iPhone%2016">Consultar</a>
-            </div>
+            <p>📞 WhatsApp: 313 221 3613</p>
 
-            <div class="producto">
-                <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=500&q=80"
-                     alt="Referencia visual para iPhone 17">
-                <h3>iPhone 17</h3>
-                <p>Pregúntanos por modelos y disponibilidad.</p>
-                <a class="boton" href="https://wa.me/573132213613?text=Hola%20JUANCEL,%20quiero%20informacion%20del%20iPhone%2017">Consultar</a>
-            </div>
+            <p>📍 Bosa Carbonell y Venecia, Bogotá.</p>
 
-            <div class="producto">
-                <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=500&q=80"
-                     alt="Referencia visual para iPhone 18">
-                <h3>iPhone 18</h3>
-                <p>Consulta si tenemos este modelo disponible.</p>
-                <a class="boton" href="https://wa.me/573132213613?text=Hola%20JUANCEL,%20quiero%20informacion%20del%20iPhone%2018">Consultar</a>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="contacto" id="contacto">
-        <h2>CONTÁC<span>TANOS</span></h2>
-        <p>🇨🇴 Somos JUANCEL, tu tienda de celulares en Colombia.</p>
-        <p>📱 Venta de celulares y atención por WhatsApp.</p>
-        <p>📞 Número: 313 221 3613</p>
-        <p>Ubicacion: bosa carbonell 
-                      venecia
-        </p>
-
-        <a class="boton"
-           href="https://wa.me/573132213613?text=Hola%20JUANCEL,%20quiero%20conocer%20su%20catalogo"
-           target="_blank"
-           rel="noopener noreferrer">
-           HABLAR POR WHATSAPP
-        </a>
-    </section>
+            <a class="button"
+               href="https://wa.me/573132213613?text=Hola%20JUANCEL%2C%20quiero%20conocer%20su%20catalogo"
+               target="_blank"
+               rel="noopener noreferrer">
+                HABLAR POR WHATSAPP
+            </a>
+        </section>
+    </main>
 
     <footer>
-        <p>© 2026 <strong>JUANCEL</strong> | Todos los derechos reservados.</p>
+        <p>
+            © 2026 <strong>JUANCEL</strong> |
+            Todos los derechos reservados.
+        </p>
+
         <p>Colombia 🇨🇴 | Tecnología a tu alcance.</p>
     </footer>
 
 </body>
 </html>
+```
